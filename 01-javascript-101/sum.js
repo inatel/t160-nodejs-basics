@@ -1,6 +1,9 @@
-let numberA = 11;
-let numberB = 31;
+const values = process.argv.splice(2);
+const convertToNumber = value => Number(value);
+const sum = (total, current) => total + current;
 
-const total = numberA + numberB;
+const total = values
+    .map(convertToNumber)
+    .reduce(sum);
 
-console.log('Total is: ' + total);
+console.log('The sum is ' + total);
