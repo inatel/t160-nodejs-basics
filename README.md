@@ -1,8 +1,7 @@
 # Node.js Basics
 
-Learning Node.js by doing!
+Conteúdo produzido para disciplina DM124 referente as turmas T160 e T169 de 2019.
 
 ## References
 
-* [Introduction to Node.js](https://www.youtube.com/playlist?list=PLQCmSnNFVYnTFo60Bt972f8HA4Td7WKwq)
-* [Node.js Basics](https://www.youtube.com/watch?v=65a5QQ3ZR2g&list=PL55RiY5tL51oGJorjEgl6NVeDbx_fO5jR)
+- [DM124 - Desenvolvimento de Web Services com segurança sob plataforma Node.js](https://github.com/inatel/DM124#dm124---desenvolvimento-de-web-services-com-seguran%C3%A7a-sob-plataforma-nodejs)
