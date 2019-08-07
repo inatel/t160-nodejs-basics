@@ -1,6 +1,6 @@
 # Node.js Basics
 
-Conteúdo produzido para disciplina DM124 referente as turmas T160 e T169 de 2019.
+Conteúdo produzido em laboratório referente a disciplina DM124 das turmas T160 e T169 de 2019.
 
 ## References
 
