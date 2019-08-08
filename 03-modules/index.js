@@ -1,4 +1,4 @@
-const BMIService = require('./BMIService');
+const BMIService = require('./bmi.service');
 
 const weight = 75;
 const height = 1.71;
