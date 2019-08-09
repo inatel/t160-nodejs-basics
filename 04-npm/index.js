@@ -1,9 +1,12 @@
 const chalk = require('chalk');
+const string = require('useful-string');
 
-console.log(chalk.yellow('Hi!'));
+const names = [
+  "Felipe Godinho de Almeida",
+  "Francine de Fátima Braga Amorim",
+  "Gerson Lourenço de Carvalho",
+  "Pereira da Conceição"
+];
 
-console.log(`
-CPU: ${chalk.red('90%')}
-RAM: ${chalk.green('40%')}
-DISK: ${chalk.yellow('70%')}
-`)
+const print = name => console.log(chalk.blue(name));
+names.map(string.hyphenate).forEach(print);

@@ -2,6 +2,7 @@
   "name": "04-npm",
   "private": true,
   "dependencies": {
-    "chalk": "^2.4.2"
+    "chalk": "^2.4.2",
+    "useful-string": "0.0.2"
   }
 }
