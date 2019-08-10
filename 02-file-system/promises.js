@@ -38,11 +38,13 @@ function addToLog(data) {
   });
 }
 
-const anyError = error => console.log(error);
+const notifyOnSuccess = () => console.log('Process has been finished!');
+const notifyOnError = (error) => console.log(error);
 
 readFile('my-file.txt')
   .then(writeData)
   .then(addToLog)
-  .catch(anyError);
+  .then(notifyOnSuccess)
+  .catch(notifyOnError);
 
-console.log('Coffee is ready!!! Came!');
+console.log('---> Coffee is ready!!! Came!');
