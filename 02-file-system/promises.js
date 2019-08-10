@@ -10,12 +10,31 @@ function readFile(fileName) {
 }
 
 function writeData(data) {
+  const { fileName, fileContent } = data;
   return new Promise((resolve, reject) => {
-    const newContent = data.fileContent + "\nDM124 - Node.js";
-    fs.writeFile(data.fileName, newContent, (error) => {
+    const newContent = fileContent + "\nDM124 - Node.js";
+    fs.writeFile(fileName, newContent, (error) => {
       if(error) reject(error);
-      resolve('The file has been saved!');
+      resolve({ fileName, fileContent: newContent });
     })
+  });
+}
+
+function addToLog(data) {
+  return new Promise((resolve, reject) => {
+    const logFileName = 'my-log.txt';
+
+    function writeLog(logs) {
+      const newEntry = `${new Date().toISOString()} - ${data.fileName}`;
+      const logContent = `${logs}\n${newEntry}`;
+      fs.writeFile(logFileName, logContent, (error) => {
+        if(error) reject(error);
+        resolve('Log added!');
+      });
+    }
+
+    readFile(logFileName)
+      .then(logData => writeLog(logData.fileContent));
   });
 }
 
@@ -23,6 +42,7 @@ const anyError = error => console.log(error);
 
 readFile('my-file.txt')
   .then(writeData)
+  .then(addToLog)
   .catch(anyError);
 
 console.log('Coffee is ready!!! Came!');
