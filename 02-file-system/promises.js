@@ -1,12 +1,19 @@
+const fs = require('fs');
 
-function getWeatherForecast() {
+function readFile(fileName) {
   return new Promise((resolve, reject) => {
-    setTimeout(() => reject('Sorry dad, I could not get it.'), 1000);
+    fs.readFile(fileName, 'utf-8', (error, fileContent) => {
+      if(error) reject(error);
+      resolve(fileContent);
+    });
   });
 }
 
-getWeatherForecast()
-  .then(weatherForecast => console.log(weatherForecast))
-  .catch(error => console.log(error))
+const showFileContent = fileContent => console.log(fileContent);
+const anyError = error => console.log(error);
+
+readFile('my-file.txt')
+  .then(showFileContent)
+  .catch(anyError);
 
 console.log('Coffee is ready!!! Came!');
