@@ -1,1 +1,5 @@
-console.log('\x1b[33m%s\x1b[0m', 'Hi!');
+const chalk = require('chalk');
+const string = require('useful-string');
+
+console.log(chalk.blue.underline('Hi NPM modules!!'));
+console.log('id: ' + string.guid());
