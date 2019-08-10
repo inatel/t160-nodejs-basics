@@ -10,13 +10,19 @@ function readFile(fileName) {
 }
 
 function writeData(data) {
-  console.log(data.fileContent);
+  return new Promise((resolve, reject) => {
+    const newContent = data.fileContent + "\nDM124 - Node.js";
+    fs.writeFile(data.fileName, newContent, (error) => {
+      if(error) reject(error);
+      resolve('The file has been saved!');
+    })
+  });
 }
 
 const anyError = error => console.log(error);
 
 readFile('my-file.txt')
   .then(writeData)
-   .catch(anyError);
+  .catch(anyError);
 
 console.log('Coffee is ready!!! Came!');
