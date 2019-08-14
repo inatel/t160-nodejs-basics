@@ -6,7 +6,7 @@ const port = 3000;
 function requestHandler(request, response) {
   const { method, url } = request;
   console.log(`${method}: ${url}`);
-  response.end('Hi there!');
+  response.end('Hi there again!');
 }
 
 http.createServer(requestHandler)
