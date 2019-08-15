@@ -21,4 +21,20 @@ router.get('/:productId', (request, response) => {
   });
 });
 
+router.patch('/:productId', (request, response) => {
+  const id = request.params.productId;
+  response.status(200).json({
+    message: 'Update product ID = ' + id,
+    id
+  });
+});
+
+router.delete('/:productId', (request, response) => {
+  const id = request.params.productId;
+  response.status(200).json({
+    message: 'Delete product ID = ' + id,
+    id
+  });
+});
+
 module.exports = router;
