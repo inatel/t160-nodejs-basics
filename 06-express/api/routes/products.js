@@ -2,8 +2,14 @@ const express = require('express');
 const router = express.Router();
 
 router.post('/', (request, response) => {
+  const product = {
+    name: request.body.name,
+    price: request.body.price
+  }
+
   response.status(201).json({
-    message: 'Product was created'
+    message: 'Product was created',
+    product
   });
 });
 

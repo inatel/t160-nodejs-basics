@@ -4,8 +4,9 @@ const notFound = require('./api/utils/notfound');
 
 const app = express();
 
-// Logging
+// Middlewares
 app.use(morgan('dev'));
+app.use(express.json());
 
 // Mapped routes
 const productRoutes = require('./api/routes/products');
